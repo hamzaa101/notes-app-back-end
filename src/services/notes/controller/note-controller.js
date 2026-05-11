@@ -33,7 +33,7 @@ export const getNoteById = (req, res, next) => {
     return next(new NotFoundError('Catatan tidak ditemukan'));
   }
 
-  return response(res, 200, 'Catatan sukses ditampilkan', { notes: note });
+  return response(res, 200, 'Catatan sukses ditampilkan', { note: note });
 };
 
 export const editNoteById = (req, res, next) => {

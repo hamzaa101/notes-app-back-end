@@ -1,5 +1,5 @@
 const validate = (schema) => (req, res, next) => {
-  const { error, value } = schema.validate(req.body, {
+  const { error, value } = schema.validate(req.query, {
     abortEarly: false,
     allowUnknown: false,
     stripUnknown: true
@@ -9,5 +9,6 @@ const validate = (schema) => (req, res, next) => {
   req.validated = value;
   next();
 };
+
 
 export default validate;
